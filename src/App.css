@@ -18,6 +18,9 @@ ul {
   padding: 0.5rem;
   max-width: 250px;
   width: 250px;
+  max-height: 400px;
+  min-height: 200px;
+  overflow: auto;
 }
 
 ul li {
