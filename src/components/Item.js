@@ -1,11 +1,15 @@
 import React from "react";
 
-const Item = React.memo((props) => {
-  const { text, id, deleteOnClick } = props;
+const Item = React.memo(
+  React.forwardRef((props, ref) => {
+    const { item, deleteOnClick } = props;
 
-  console.log("item render");
-
-  return <li onClick={deleteOnClick(id)}>{text}</li>;
-});
+    return (
+      <li ref={ref} onClick={deleteOnClick(item.id)}>
+        {item.title}
+      </li>
+    );
+  })
+);
 
 export default Item;
